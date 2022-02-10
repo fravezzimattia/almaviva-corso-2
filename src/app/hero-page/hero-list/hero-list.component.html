@@ -1,0 +1,6 @@
+<p>hero list</p>
+<button (click)="refresh()">Refresh</button>
+
+<mat-list>
+   <app-hero-item *ngFor="let hero of items" [item]="hero" (selectedItem)="onSelectedItem($event)"></app-hero-item>
+</mat-list>
