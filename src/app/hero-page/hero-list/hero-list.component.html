@@ -1,6 +1,11 @@
-<p>hero list</p>
-<button (click)="refresh()">Refresh</button>
+<p appHighlight>hero list</p>
+<button appHighlight color="green" (click)="refresh()">Refresh</button>
 
 <mat-list>
-   <app-hero-item *ngFor="let hero of items" [item]="hero" (selectedItem)="onSelectedItem($event)"></app-hero-item>
+   <app-hero-item appHighlight color="red" *ngFor="let hero of items" [item]="hero" (selectedItem)="onSelectedItem($event)"></app-hero-item>
 </mat-list>
+
+<span ngNonBindable>
+   {{ 1 + 1 }} =
+</span>
+<span> {{ 1 + 1 }}</span>

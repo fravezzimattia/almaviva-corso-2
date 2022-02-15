@@ -1,4 +1,9 @@
-.titolo{
+.titolo {
     background-color: blue;
     color: white;
+}
+
+:host {
+    display: block;
+    position: relative;
 }

@@ -1,3 +1,18 @@
 <h1 class="titolo">{{ title }}</h1>
 
 <app-hero-page></app-hero-page>
+
+
+<div [ngClass]="{'a':condition,'b':!condition, 'unless':true}">
+    The condition is currently : {{condition}}
+    <button (click)="condition = !condition" [ngClass]="{'isConditionTrue':condition}">
+        Toggle condition to {{ condition ? 'false': 'true'}}
+    </button>
+
+    <p *appUnless="condition">
+        Show (A)
+    </p>
+    <p *appUnless="!condition">
+        Show (B)
+    </p>
+</div>

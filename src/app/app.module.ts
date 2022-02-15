@@ -11,13 +11,17 @@ import { HeroItemComponent } from './hero-page/hero-list/hero-item/hero-item.com
 import { MatIconModule } from '@angular/material/icon';
 import { FormsModule } from '@angular/forms';
 import { MatInputModule } from '@angular/material/input';
+import { HighlightDirective } from './highlight.directive';
+import { UnlessDirective } from './unless.directive';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeroPageComponent,
     HeroListComponent,
-    HeroItemComponent
+    HeroItemComponent,
+    HighlightDirective,
+    UnlessDirective
   ],
   imports: [
     BrowserModule,
