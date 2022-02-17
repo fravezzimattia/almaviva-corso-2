@@ -21,5 +21,4 @@ export class UnlessDirective {
     private templateRef: TemplateRef<any>,
     private viewContainerRef: ViewContainerRef
   ) { }
-
 }

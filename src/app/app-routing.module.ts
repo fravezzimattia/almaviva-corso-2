@@ -5,6 +5,10 @@ import { AppRoutings } from './core/configs/app-routings';
 const routes: Routes = [{
   path: AppRoutings.heroPage,
   loadChildren: () => import('./features/hero-page/hero-page.module').then(res => res.HeroPageModule)
+},
+{
+  path: AppRoutings.adminPage,
+  loadChildren: () => import('./features/admin-page/admin-page.module').then(res => res.AdminPageModule)
 }];
 
 @NgModule({
