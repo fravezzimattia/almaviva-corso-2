@@ -4,6 +4,7 @@ import { CommonModule } from '@angular/common';
 import { AdminPageRoutingModule } from './admin-page-routing.module';
 import { AdminPageComponent } from './admin-page.component';
 import { SharedModule } from 'src/app/shared/shared.module';
+import { CoreModule } from 'src/app/core/core.module';
 
 
 @NgModule({
@@ -13,7 +14,8 @@ import { SharedModule } from 'src/app/shared/shared.module';
   imports: [
     CommonModule,
     AdminPageRoutingModule,
-    SharedModule
+    SharedModule,
+    CoreModule.forChild()
   ]
 })
 export class AdminPageModule { }

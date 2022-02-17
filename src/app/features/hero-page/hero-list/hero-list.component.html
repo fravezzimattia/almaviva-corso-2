@@ -2,7 +2,7 @@
 <button appHighlight color="green" (click)="refresh()">Refresh</button>
 
 <mat-list>
-   <app-hero-item appHighlight color="red" *ngFor="let hero of items" [item]="hero" (selectedItem)="onSelectedItem($event)"></app-hero-item>
+   <app-hero-item appHighlight color="red" *ngFor="let hero of items" [item]="hero.name" (selectedItem)="onSelectedItem($event)"></app-hero-item>
 </mat-list>
 
 <span ngNonBindable>

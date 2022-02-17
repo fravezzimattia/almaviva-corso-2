@@ -1,4 +1,4 @@
-<mat-toolbar>
+<mat-toolbar [color]="configService.theme === themeEnum.Dark ? 'primary':''">
     <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
         <mat-icon>menu</mat-icon>
     </button>
@@ -7,9 +7,21 @@
 
     <button mat-button [routerLink]="appRoutings.heroPage">
         Heroes
-     </button>   
-     <button mat-button [routerLink]="appRoutings.adminPage">
+    </button>
+    <button mat-button [routerLink]="appRoutings.adminPage">
         Admin
-     </button>
+    </button>
+
+    <button mat-icon-button *ngIf="configService.theme === themeEnum.Light"
+        (click)="configService.setTheme(themeEnum.Dark)" class="example-icon"
+        aria-label="Example icon-button with menu icon">
+        <mat-icon>bookmark</mat-icon>
+    </button>
+
+    <button mat-icon-button *ngIf="configService.theme === themeEnum.Dark"
+        (click)="configService.setTheme(themeEnum.Light)" class="example-icon"
+        aria-label="Example icon-button with menu icon">
+        <mat-icon>bookmark_border</mat-icon>
+    </button>
 
 </mat-toolbar>

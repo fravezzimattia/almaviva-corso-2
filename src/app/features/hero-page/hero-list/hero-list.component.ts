@@ -1,4 +1,5 @@
 import { ChangeDetectionStrategy, ChangeDetectorRef, Component, Input } from '@angular/core';
+import { HeroDto } from '../models/hero-dto.model';
 
 @Component({
   selector: 'app-hero-list',
@@ -8,7 +9,7 @@ import { ChangeDetectionStrategy, ChangeDetectorRef, Component, Input } from '@a
 })
 export class HeroListComponent {
   @Input()
-  public items: string[] = [];
+  public items: HeroDto[] = [];
 
   public onSelectedItem(item: string) {
     alert(item);
