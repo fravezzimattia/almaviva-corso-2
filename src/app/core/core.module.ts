@@ -32,9 +32,10 @@ export class CoreModule {
     return {
       ngModule: CoreModule,
       providers: [
-        AppConfigLoader,
-        AppConfigInitializer,
-        AppConfigGetter,
+        // Config Load in APP
+        // AppConfigLoader,
+        // AppConfigInitializer,
+        // AppConfigGetter,
         ConfigService
       ]
     }
