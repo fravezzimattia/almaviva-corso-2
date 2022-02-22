@@ -9,8 +9,10 @@ import { MatInputModule } from '@angular/material/input';
 import { FormsModule } from '@angular/forms';
 import { SharedModule } from 'src/app/shared/shared.module';
 import { HeroService } from './services/hero.service';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { HeroStore } from './services/hero.store';
+import { JwtInterceptor } from 'src/app/core/interceptors/jwt.interceptor';
+import { ErrorInterceptor } from 'src/app/core/interceptors/error.interceptor';
 
 @NgModule({
   declarations: [
@@ -30,7 +32,9 @@ import { HeroStore } from './services/hero.store';
   ],
   providers: [
     HeroStore,
-    HeroService
+    HeroService,
+    { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
+    { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true }
   ]
 })
 export class HeroPageModule { }

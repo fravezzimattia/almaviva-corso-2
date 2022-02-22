@@ -12,6 +12,16 @@
         Admin
     </button>
 
+    <button mat-button (click)="login('user')">
+        Login as User
+    </button>
+    <button mat-button (click)="login('admin')">
+        Login as Admin
+    </button>
+    <button mat-button (click)="logout()">
+        Logout
+    </button>
+
     <button mat-icon-button *ngIf="configService.theme === themeEnum.Light"
         (click)="configService.setTheme(themeEnum.Dark)" class="example-icon"
         aria-label="Example icon-button with menu icon">
