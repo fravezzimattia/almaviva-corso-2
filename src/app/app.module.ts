@@ -20,9 +20,6 @@ import { JwtInterceptor } from './core/interceptors/jwt.interceptor';
     CoreModule.forRoot(),
     SharedModule
   ],
-  providers: [
-   
-  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

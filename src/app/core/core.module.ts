@@ -7,6 +7,8 @@ import { MatButtonModule } from '@angular/material/button';
 import { RouterModule } from '@angular/router';
 import { ConfigService } from './services/config.service';
 import { ThemeEnum } from './enums/theme.enum';
+import { AppConfigGetter, AppConfigInitializer, AppConfigLoader } from './loaders/app-config.loader';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -15,6 +17,7 @@ import { ThemeEnum } from './enums/theme.enum';
   ],
   imports: [
     CommonModule,
+    HttpClientModule,
     MatToolbarModule,
     MatIconModule,
     MatButtonModule,
@@ -29,6 +32,9 @@ export class CoreModule {
     return {
       ngModule: CoreModule,
       providers: [
+        AppConfigLoader,
+        AppConfigInitializer,
+        AppConfigGetter,
         ConfigService
       ]
     }
