@@ -9,7 +9,7 @@ import { HeroDto } from '../models/hero-dto.model';
 })
 export class HeroListComponent {
   @Input()
-  public items: HeroDto[] = [];
+  public items: HeroDto[] | null = [];
 
   public onSelectedItem(item: string) {
     alert(item);

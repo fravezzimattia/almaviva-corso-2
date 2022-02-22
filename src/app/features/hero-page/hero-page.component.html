@@ -3,7 +3,8 @@
 <input MatInput type="text" [(ngModel)]="heroName">
 <button (click)="saveHero()">Save</button>
 {{ heroName }}
-<app-hero-list [items]="heroList"></app-hero-list>
-
+<!-- <app-hero-list [items]="heroList"></app-hero-list> -->
+<!-- <app-hero-list [items]="(heroService.get() | async)"></app-hero-list> -->
+<app-hero-list [items]="heroStore.get()"></app-hero-list>
 
 <app-alert></app-alert>

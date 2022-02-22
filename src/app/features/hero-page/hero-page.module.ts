@@ -10,6 +10,7 @@ import { FormsModule } from '@angular/forms';
 import { SharedModule } from 'src/app/shared/shared.module';
 import { HeroService } from './services/hero.service';
 import { HttpClientModule } from '@angular/common/http';
+import { HeroStore } from './services/hero.store';
 
 @NgModule({
   declarations: [
@@ -28,6 +29,7 @@ import { HttpClientModule } from '@angular/common/http';
     HttpClientModule
   ],
   providers: [
+    HeroStore,
     HeroService
   ]
 })
