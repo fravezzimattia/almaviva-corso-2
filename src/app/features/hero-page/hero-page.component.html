@@ -8,3 +8,51 @@
 <app-hero-list [items]="heroStore.get()"></app-hero-list>
 
 <app-alert></app-alert>
+
+
+
+<h3>T.D.F.</h3>
+<pre>dirty => {{ f.dirty }}</pre>
+<pre>valid => {{ f.valid }}</pre>
+<pre>invalid => {{ f.invalid }}</pre>
+<pre>touched => {{ f.touched }}</pre>
+
+<div *ngIf="f.invalid && (f.dirty || f.touched)">
+    <small *ngIf="nameRef.errors?.['required']">
+        Name is required!
+    </small>
+    <small *ngIf="nameRef.errors?.['minlength']">
+        Name must be at least 3 chars!
+    </small>
+    <small *ngIf="abilityRef.errors?.['required']">
+        Ability is required!
+    </small>
+</div>
+
+<form #f="ngForm" (submit)="tdfAdd(f)" [ngClass]="{'error': f.invalid && (f.dirty || f.touched) }">
+    <input name="name" placeholder="Add Name"
+        [ngClass]="{'error': nameRef.invalid && (nameRef.dirty || nameRef.touched)}" #nameRef="ngModel"
+        [ngModel]="hero?.name" required minlength="3">
+    <input name="ability" placeholder="Add Ability" #abilityRef="ngModel" [ngModel]="hero?.ability" required>
+
+    <button type="submit" [disabled]="f.invalid">Save hero</button>
+</form>
+
+
+
+<h3> Reactive Forms</h3>
+
+<form [formGroup]="myForm" (ngSubmit)="reactiveAdd()">
+    <input type="text" formControlName="name" placeholder="Add Name">
+    <div *ngIf="myForm.invalid && (myForm.dirty || myForm.touched)">
+        <div *ngIf="myForm.get('name')?.errors?.['required']">
+            Name is required!
+        </div>
+        <div *ngIf="myForm.get('name')?.errors?.['forbiddenName']">
+            Name cannot be Prova!
+        </div>
+    </div>
+    <input type="text" formControlName="ability" placeholder="Add Ability">
+
+    <button type="submit" [disabled]="myForm.invalid"> Save Hero</button>
+</form>

@@ -6,7 +6,7 @@ import { HeroItemComponent, HeroListComponent, HeroPageComponent } from '.';
 import { MatListModule } from '@angular/material/list';
 import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { SharedModule } from 'src/app/shared/shared.module';
 import { HeroService } from './services/hero.service';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
@@ -28,6 +28,7 @@ import { ErrorInterceptor } from 'src/app/core/interceptors/error.interceptor';
     MatIconModule,
     MatInputModule,
     FormsModule,
+    ReactiveFormsModule,
     HttpClientModule
   ],
   providers: [
