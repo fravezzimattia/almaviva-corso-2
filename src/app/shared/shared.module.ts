@@ -6,6 +6,7 @@ import { material } from './material.module';
 import { AdHeroJobComponent } from '../shared/components/ads/ad-hero-job/ad-hero-job.component';
 import { AdHeroProfileComponent } from '../shared/components/ads/ad-hero-profile/ad-hero-profile.component';
 import { AdHostDirective } from '../shared/directives/ad-host.directive';
+import { IsHeroFilterPipe } from '../shared/pipes/is-hero-filter.pipe';
 
 @NgModule({
   declarations: [
@@ -13,7 +14,8 @@ import { AdHostDirective } from '../shared/directives/ad-host.directive';
     ...exportDirectives,
     AdHeroJobComponent,
     AdHeroProfileComponent,
-    AdHostDirective
+    AdHostDirective,
+    IsHeroFilterPipe
   ],
   imports: [
     CommonModule,
@@ -22,7 +24,8 @@ import { AdHostDirective } from '../shared/directives/ad-host.directive';
   exports: [
     ...exportComponents,
     ...exportDirectives,
-    ...material
+    ...material,
+    IsHeroFilterPipe
   ]
 })
 export class SharedModule { }

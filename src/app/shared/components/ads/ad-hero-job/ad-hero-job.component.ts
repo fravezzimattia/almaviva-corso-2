@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, OnDestroy } from '@angular/core';
 import { AdsComponent } from '../interfaces/ads.component';
 
 @Component({
@@ -6,7 +6,11 @@ import { AdsComponent } from '../interfaces/ads.component';
   templateUrl: './ad-hero-job.component.html',
   styleUrls: ['./ad-hero-job.component.scss']
 })
-export class AdHeroJobComponent implements AdsComponent {
+export class AdHeroJobComponent implements AdsComponent, OnDestroy {
   @Input()
   public data: any;
+
+  ngOnDestroy(): void {
+    console.log("viene distrutto!");
+  }
 }
