@@ -9,11 +9,17 @@ import { ConfigService } from './services/config.service';
 import { ThemeEnum } from './enums/theme.enum';
 import { AppConfigGetter, AppConfigInitializer, AppConfigLoader } from './loaders/app-config.loader';
 import { HttpClientModule } from '@angular/common/http';
+import { ProfileComponent } from './components/profile/profile.component';
+import { StoreModule } from '@ngrx/store';
+import { reducers } from './store/store.config';
+import { EffectsModule } from '@ngrx/effects';
+import { ProfileEffects } from './components/profile/store/profile.effects';
 
 
 @NgModule({
   declarations: [
-    NavbarComponent
+    NavbarComponent,
+    ProfileComponent
   ],
   imports: [
     CommonModule,
@@ -21,7 +27,10 @@ import { HttpClientModule } from '@angular/common/http';
     MatToolbarModule,
     MatIconModule,
     MatButtonModule,
-    RouterModule
+    RouterModule,
+
+    StoreModule.forRoot(reducers),
+    EffectsModule.forRoot([ProfileEffects])
   ],
   exports: [
     NavbarComponent
